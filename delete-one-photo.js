@@ -29,6 +29,18 @@ function delay(time) {
 
     await page.waitForSelector('.mjANdc > .g3VIld > .XfpsVe > .VfPpkd-LgbsSe:nth-child(2) > .VfPpkd-vQzf8d')
     await page.click('.mjANdc > .g3VIld > .XfpsVe > .VfPpkd-LgbsSe:nth-child(2) > .VfPpkd-vQzf8d')*/
+    page.keyboard.press("i") // show the details pane, to see if this photo is in an album
+    await delay(1000)
+    let albumPresent = (await page.$('.wiOkb')) || "no" // .wiOkb is th class for the "Album" heading in the info pane
+    //let albumPresent = await page.waitForXPath('//*[contains(text(), "Albums")]') || "no";
+    if (albumPresent == "no") {
+        console.log("Not in any albums")
+    } else {
+        console.log("It's in an album, abort!")
+        page.close()
+        process.exit(1)
+    }
+    await delay(10000)
     page.keyboard.press("#")
     await delay(1000)
     page.keyboard.press("Enter")
