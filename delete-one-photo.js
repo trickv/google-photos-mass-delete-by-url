@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const wsChromeEndpointurl = 'ws://127.0.0.1:9222/devtools/browser/af938b1c-840e-4462-861c-b743bfb0fcd5';
+const wsChromeEndpointurl = process.argv[2]
 
 function delay(time) {
    return new Promise(function(resolve) {
@@ -18,7 +18,7 @@ function delay(time) {
     //page.setUserAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36");
     //await page.goto('http://ip.v9n.us/')
     //await page.goto('https://photos.google.com/lr/photo/AIZWZ9cSzfLnTVP3OFx3StH03GBri5mF7C1btyWQ4GqRVqDWket5y8gNzeGpo0LtoVLWj-9wceDlQFkPZqMC5kr6S4Ea1m7jeA')
-    await page.goto(process.argv[2])
+    await page.goto(process.argv[3])
 
     //await page.setViewport({ width: 1916, height: 956 })
 
