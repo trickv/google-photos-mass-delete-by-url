@@ -34,18 +34,24 @@ function delay(time) {
 
     await page.waitForSelector('.mjANdc > .g3VIld > .XfpsVe > .VfPpkd-LgbsSe:nth-child(2) > .VfPpkd-vQzf8d')
     await page.click('.mjANdc > .g3VIld > .XfpsVe > .VfPpkd-LgbsSe:nth-child(2) > .VfPpkd-vQzf8d')*/
+
     page.keyboard.press("i") // show the details pane, to see if this photo is in an album
-    await delay(1000)
-    let albumPresent = (await page.$('.wiOkb')) || "no" // .wiOkb is th class for the "Album" heading in the info pane
+    await delay(3000)
+    // let albumPresent = (await page.$('.KlIBpb > .wiOkb')) || "no"
+    //page.waitForSelector(".KlIBpb > .wiOkb", { visible: true })
+    let albumPresent = (await page.$('.KlIBpb > .wiOkb')) || "no"
     //let albumPresent = await page.waitForXPath('//*[contains(text(), "Albums")]') || "no";
     if (albumPresent == "no") {
-        console.log("Not in any albums")
+        console.log("Not in any albums, will delete: " + process.argv[3])
     } else {
-        console.log("It's in an album, abort!")
+        console.log("It's in an album, skip! " + process.argv[3])
+        page.keyboard.press("i") // hide the details pane
+        await delay(500)
         page.close()
         process.exit(1)
     }
-    await delay(10000)
+    page.keyboard.press("i") // hide the details pane
+    await delay(3000)
     page.keyboard.press("#")
     await delay(1000)
     page.keyboard.press("Enter")
