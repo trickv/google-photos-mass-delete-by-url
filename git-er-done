@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "" ]]; then
+    echo "Usage: $0 <file name with a bunch of Google Photos URLs>"
+    exit 1
+fi
+
+if [[ ! -e $1 ]]; then
+    echo "Input file '$1' does not exist?"
+    exit 2
+fi
+
+time for a in $(cat $1); do 
+    echo -n $(date)\ 
+    node delete-one-photo.js $(cat ws) $a
+done
