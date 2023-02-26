@@ -36,7 +36,7 @@ function delay(time) {
     await page.click('.mjANdc > .g3VIld > .XfpsVe > .VfPpkd-LgbsSe:nth-child(2) > .VfPpkd-vQzf8d')*/
 
     page.keyboard.press("i") // show the details pane, to see if this photo is in an album
-    await delay(3000)
+    await delay(2000)
     // let albumPresent = (await page.$('.KlIBpb > .wiOkb')) || "no"
     //page.waitForSelector(".KlIBpb > .wiOkb", { visible: true })
     let albumPresent = (await page.$('.KlIBpb > .wiOkb')) || "no"
@@ -51,11 +51,11 @@ function delay(time) {
         process.exit(1)
     }
     page.keyboard.press("i") // hide the details pane
-    await delay(3000)
+    await delay(1000)
     page.keyboard.press("#")
-    await delay(1000)
+    await delay(500)
     page.keyboard.press("Enter")
-    await delay(1000)
+    await delay(500)
     page.close()
     process.exit(0)
 
