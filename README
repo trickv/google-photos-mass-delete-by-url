@@ -1,0 +1,5 @@
+A hacky little setup to delete specific Google Photos images by driving Chrome remotely using puppeteer.
+
+I only really use Photos for sharing stuff with family/friends via albums. But sometimes I upload stuff I don't need. I tend to remove it from albums, but don't always delete it, so my photos account is full of stuff that can be deleted.
+
+I was first prompted to do this in 2021/2022 when Google started charging for storage and again worked on these scripts in 2025 when I started to hit the storage limit again.
