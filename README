@@ -8,3 +8,10 @@ To use:
 - Write something that talks to the Google Photos API and selects out the URLs that you want to delete. I wrote a Google Apps Script which selects out the list of all photos that are in albums, finds the ones that are not in an album, and makes a spreadsheet. Format it and download; just one URL per line as a plain text file.
 - Fire up Chrome using the run-chrome script which starts it with a remote control websocket, and make sure it's signed into the Google account that owns the photos. Wait 5 seconds so it can write the web socket URL down.
 - Run ./git-er-done <filename> and it'll slowly crawl through your photos deleting them. It might skip files if it thinks they are in an album; there's some rudimentary in-album detection which uses CSS selectors and is pretty conservative and thus not entirely accurate...
+
+Caveats:
+- There must be a better way to do this?
+- This uses a viewable Chrome instance that you have to sign into, so it requires a dedicated machine; a clever person would run it in a vnc server where you can keep an eye on it remotely but I do it with a spare laptop.
+- Error detection is rubbish
+- It relies on CSS selectors with beautiful names like 'span > .VfPpkd-ksKsZd-mWPk3d-OWXEXe-Tv8l5d-lJfZMc' which I expect is a compressed CSS name and I'm surprised hasn't changed in the past few years.
+- It's so slow because of all the delays I've put in to avoid race conditions - so it deletes a photo about every 5 seconds.
