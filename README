@@ -1,3 +1,15 @@
+======= warning ======
+
+This doesn't work anymore.
+
+Google deprecated the API: https://developers.google.com/photos/support/updates
+
+My approach for this sort of stuff now is going to be to use Google Takeout, which is a lot slower, but c'est la vie.
+
+======= warning ======
+
+
+
 A hacky little setup to delete specific Google Photos images by driving Chrome remotely using puppeteer.
 
 I only really use Photos for sharing stuff with family/friends via albums. But sometimes I upload stuff I don't need. I tend to remove it from albums, but don't always delete it, so my photos account is full of stuff that can be deleted.
