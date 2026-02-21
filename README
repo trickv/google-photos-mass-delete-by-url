@@ -4,7 +4,7 @@ This doesn't work anymore.
 
 Google deprecated the API: https://developers.google.com/photos/support/updates
 
-My approach for this sort of stuff now is going to be to use Google Takeout, which is a lot slower, but c'est la vie.
+My approach for this sort of stuff now is going to be to use Google Takeout, which is a lot slower, but c'est la vie. New code: https://github.com/trickv/google-photos-cleanup/
 
 ======= warning ======
 
